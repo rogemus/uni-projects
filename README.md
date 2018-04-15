@@ -29,13 +29,13 @@ const config = {
 ```
 
 ## Creating service 
-In terminal run: 
+In terminal run: (**in the same directory as app.js**)
 ```
 forever-service install bskBackup
 ```
 
 ## Run at startup 
-To run the service at the startup, open the file `/etc/rc.local` :
+To run the service at the startup, open the file `/etc/rc.local`:
 ```
 sudo nano /etc/rc.local
 ```
