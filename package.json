@@ -1,0 +1,17 @@
+{
+  "name": "bsk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "postinstall": "sudo npm install -g forever-service forever"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^7.1.2",
+    "node-watch": "^0.5.8",
+    "ssh2-sftp-client": "^2.1.1"
+  }
+}
