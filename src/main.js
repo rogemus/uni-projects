@@ -1,4 +1,6 @@
 import complexMath from './complex/complex';
+import { addParagraph, addHeading, addLine } from './utils/dom';
+
 const { complex, vektor } = complexMath.operations;
 
 const a = complexMath.complex(2, 3);
@@ -15,26 +17,23 @@ const v = complexMath.vektor([
 	complexMath.complex(2, 1)
 ]);
 
-console.log('-------------------------------------------');
-console.log('------------------LICZBY-------------------');
-console.log('-------------------------------------------');
+addHeading('LICZBY');
 
-console.log('Liczba a =', a.display());
-console.log('Liczba b =', b.display());
-console.log('a + b = ', complex.addition(a, b).display());
-console.log('a - b = ', complex.subtraction(a, b).display());
-console.log('a * b = ', complex.multiplication(a, b).display());
-console.log('a / b = ', complex.division(a, b));
-console.log('sprzezenie a ', complex.coupling(a).display());
-console.log('modul a ', complex.module(a));
+addParagraph(`a = ${a.display()}`);
+addParagraph(`b = ${b.display()}`);
+addParagraph(`a + b = ${complex.addition(a, b).display()}`);
+addParagraph(`a - b = ${complex.subtraction(a, b).display()}`);
+addParagraph(`a * b = ${complex.multiplication(a, b).display()}`);
+addParagraph(`a / b = ${complex.division(a, b)}`);
+addParagraph(`sprzężenie a = ${complex.coupling(a).display()}`);
+addParagraph(`| a | = ${complex.module(a)}`);
 
-console.log('-------------------------------------------');
-console.log('------------------VEKTORY------------------');
-console.log('-------------------------------------------');
+addLine();
+addHeading('VEKTORY');
 
-console.log('Wektor V = ', v.display());
-console.log('Wektor W = ', w.display());
-console.log('W + V = ', vektor.addition(w, v).display());
-console.log('W - V = ', vektor.subtraction(w, v).display());
-console.log('gamma *W = ', vektor.scalarMultiplicatio(w, gamma).display());
-console.log('<V|W> = ', vektor.scalarProduct(v, w).display());
+addParagraph(`Wektor V = ${v.display()}`);
+addParagraph(`Wektor W = ${w.display()}`);
+addParagraph(`W + V = ${vektor.addition(w, v).display()}`);
+addParagraph(`W - V = ${vektor.subtraction(w, v).display()}`);
+addParagraph(`gamma * W = ${vektor.scalarMultiplicatio(w, gamma).display()}`);
+addParagraph(`< V | W > = ${vektor.scalarProduct(v, w).display()}`);
