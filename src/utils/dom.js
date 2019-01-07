@@ -1,5 +1,9 @@
 const app = document.getElementById('app');
 
+export function clear() {
+	app.innerHTML = '';
+}
+
 export function addNode(content, tag = 'p') {
 	const newNode = document.createElement(tag);
 
@@ -26,7 +30,7 @@ export function addParagraph(content) {
 	const label = splited[0];
 	const value = splited[1];
 	strong.innerHTML = label;
-	span.innerHTML = ` = ${value}`;
+	span.innerHTML = ` = ${value.replace('\n', '<br />')}`;
 	helper.appendChild(strong);
 	helper.appendChild(span);
 
