@@ -23,13 +23,13 @@ export function multiplication(m1, m2) {
 	// );
 
 	let top1 = complexNumberMultiplication(matrix1[0][0], matrix2[0][0]);
-	//	let top2 = complexNumberMultiplication(matrix1[0][1], matrix2[1][0]);
+	let top2 = complexNumberMultiplication(matrix1[0][1], matrix2[1][0]);
 
-	// let bottom1 = complexNumberMultiplication(matrix1[1][0], matrix2[0][0]);
-	// let bottom2 = complexNumberMultiplication(matrix1[1][1], matrix2[1][0]);
+	let bottom1 = complexNumberMultiplication(matrix1[1][0], matrix2[0][0]);
+	let bottom2 = complexNumberMultiplication(matrix1[1][1], matrix2[1][0]);
 
-	// console.log(top1.display(), '|', top2.display());
-	// console.log(bottom1.display(), '|', bottom2.display());
+	console.log(top1.display(), '|', top2.display());
+	console.log(bottom1.display(), '|', bottom2.display());
 
 	// const newMatrix = new Matrix([top], [bottom]);
 

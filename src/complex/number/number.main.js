@@ -30,6 +30,10 @@ export default class ComplexNumber {
 			return `${re}`;
 		}
 
+		if (re === 0 && im === 1) {
+			return 'i';
+		}
+
 		if (re === 0) {
 			return `${im}i`;
 		}

@@ -40,33 +40,7 @@ export function subtraction(num1, num2) {
 
 // Mnożenie
 export function multiplication(num1, num2) {
-	let real;
-	let imaginary;
-
-	complexMultiplication(num1, num2);
-
-	// if real1 nan && real2 nan
-	// img1 0 && img2 nan
-	// img1 nan && img2 0
-	// img1 n && img2 nan
-	// img1 n && img n
-	// img nan && img2 n
-
-	// if real1 n || 0 && real2 n || 0
-	// img1 n || 0 && img2 n || 0
-
-	// if real n && real2
-	// img1 0 && img2 nan
-	// img1 nan && img2 0
-	// img1 n && img2 0
-	// img1 0 && img2 n
-	// img1 n && img2 nan
-	// img1 nan && img2 n
-
-	real = num1.real * num2.real - num1.imaginary * num2.imaginary;
-	imaginary = num1.real * num2.imaginary + num1.imaginary * num2.real;
-
-	return new Complex(real, imaginary);
+	return complexMultiplication(num1, num2);
 }
 
 // Dzielenie

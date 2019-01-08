@@ -14,16 +14,16 @@ const w = complexMath.vektor([complexMath.complex(1, 2), complexMath.complex(3, 
 const v = complexMath.vektor([complexMath.complex(-1, -1), complexMath.complex(2, 1)]);
 
 const gateX = complexMath.matrix(
-	[complexMath.complex(0, 0), complexMath.complex(0, 1)],
+	[complexMath.complex(0, 0), complexMath.complex(1, 0)],
 	[complexMath.complex(1, 0), complexMath.complex(0, 0)]
 );
 const gateY = complexMath.matrix(
-	[complexMath.complex(0, 0), complexMath.complex(0, -1)],
-	[complexMath.complex(0, 1), complexMath.complex(0, 0)]
+	[complexMath.complex(0, 0), complexMath.complex(-1, 0)],
+	[complexMath.complex(1, 0), complexMath.complex(0, 0)]
 );
 const gateZ = complexMath.matrix(
 	[complexMath.complex(1, 0), complexMath.complex(0, 0)],
-	[complexMath.complex(0, 0), complexMath.complex(0, -1)]
+	[complexMath.complex(0, 0), complexMath.complex(-1, 0)]
 );
 
 const matrixA = complexMath.matrix(
