@@ -18,8 +18,8 @@ const gateX = complexMath.matrix(
 	[complexMath.complex(1, 0), complexMath.complex(0, 0)]
 );
 const gateY = complexMath.matrix(
-	[complexMath.complex(0, 0), complexMath.complex(-1, 0)],
-	[complexMath.complex(1, 0), complexMath.complex(0, 0)]
+	[complexMath.complex(0, 0), complexMath.complex(0, -1)],
+	[complexMath.complex(0, 1), complexMath.complex(0, 0)]
 );
 const gateZ = complexMath.matrix(
 	[complexMath.complex(1, 0), complexMath.complex(0, 0)],
@@ -30,7 +30,6 @@ const matrixA = complexMath.matrix(
 	[complexMath.complex('a', 0)],
 	[complexMath.complex('b', 0)]
 );
-const matrixB = complexMath.matrix([4], [5]);
 
 clear();
 
