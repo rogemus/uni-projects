@@ -70,7 +70,10 @@ addHeading('🔢 MACIERZE');
 addParagraph(`Bramka X = <br /> ${gateX.display()}`);
 addParagraph(`Bramka Y = <br /> ${gateY.display()}`);
 addParagraph(`Bramka Z = <br /> ${gateZ.display()}`);
+addParagraph(`A = <br /> ${matrixA.display()}`);
 
-addParagraph(`A * X = ${matrix.multiplication(gateX, matrixA)}`);
+addParagraph(`A * X = <br />  ${matrix.multiplication(gateX, matrixA)}`);
+addParagraph(`A * Y = <br />  ${matrix.multiplication(gateY, matrixA)}`);
+addParagraph(`A * Z = <br />  ${matrix.multiplication(gateZ, matrixA)}`);
 
 //--------------------------------------------------------------

@@ -17,7 +17,7 @@ export function module(num) {
 
 // Dodawanie
 export function addition(num1, num2) {
-	let rlA;
+	let rlA, imgA;
 
 	if (num1.isLetterReal() || num2.isLetterReal()) {
 		rlA = `${num1.real} + ${num2.real}`;
@@ -25,7 +25,27 @@ export function addition(num1, num2) {
 		rlA = num1.real + num2.real;
 	}
 
-	const imgA = num1.imaginary + num2.imaginary;
+	if (num1.isLetterReal() && num2.real === 0) {
+		rlA = num1.real;
+	}
+
+	if (num2.isLetterReal() && num1.real === 0) {
+		rlA = num2.real;
+	}
+
+	if (num1.isLetterImaginary() || num2.isLetterImaginary()) {
+		imgA = `${num1.imaginary} + ${num2.imaginary}`;
+	} else {
+		imgA = num1.imaginary + num2.imaginary;
+	}
+
+	if (num1.isLetterImaginary() && num2.imaginary === 0) {
+		imgA = num1.imaginary;
+	}
+
+	if (num2.isLetterImaginary() && num1.imaginary === 0) {
+		imgA = num2.imaginary;
+	}
 
 	return new Complex(rlA, imgA);
 }
