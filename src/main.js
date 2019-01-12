@@ -13,10 +13,21 @@ const w = complexMath.vektor([complexMath.complex(1, 2), complexMath.complex(3, 
 
 const v = complexMath.vektor([complexMath.complex(-1, -1), complexMath.complex(2, 1)]);
 
+const m1 = complexMath.matrix(
+	[complexMath.complex(1, 0), complexMath.complex(0, 0)],
+	[complexMath.complex(0, 0), complexMath.complex(0, 0)]
+);
+
+const m2 = complexMath.matrix(
+	[complexMath.complex(0, 0), complexMath.complex(0, 0)],
+	[complexMath.complex(0, 0), complexMath.complex(1, 0)]
+);
+
 const gateX = complexMath.matrix(
 	[complexMath.complex(0, 0), complexMath.complex(1, 0)],
 	[complexMath.complex(1, 0), complexMath.complex(0, 0)]
 );
+
 const gateY = complexMath.matrix(
 	[complexMath.complex(0, 0), complexMath.complex(0, -1)],
 	[complexMath.complex(0, 1), complexMath.complex(0, 0)]
@@ -24,6 +35,11 @@ const gateY = complexMath.matrix(
 const gateZ = complexMath.matrix(
 	[complexMath.complex(1, 0), complexMath.complex(0, 0)],
 	[complexMath.complex(0, 0), complexMath.complex(-1, 0)]
+);
+
+const gateH = complexMath.matrix(
+	[complexMath.complex('1/✔2', 0), complexMath.complex('1/✔2', 0)],
+	[complexMath.complex('1/✔2', 0), complexMath.complex('-1/✔2', 0)]
 );
 
 const matrixA = complexMath.matrix(
@@ -37,29 +53,29 @@ clear();
 
 addHeading('#️⃣ LICZBY');
 
-// addParagraph(`a = ${a.display()}`);
-// addParagraph(`b = ${b.display()}`);
-// addParagraph(`c1 = ${c1.display()}`);
-// addParagraph(`c2 = ${c2.display()}`);
-// addParagraph(`a + b = ${complex.addition(a, b).display()}`);
-// addParagraph(`a - b = ${complex.subtraction(a, b).display()}`);
-// addParagraph(`a * b = ${complex.multiplication(a, b).display()}`);
-// addParagraph(`c1 * c2 = ${complex.multiplication(c1, c2).display()}`);
-// addParagraph(`a / b = ${complex.division(a, b)}`);
-// addParagraph(`sprzężenie a = ${complex.coupling(a).display()}`);
-// addParagraph(`| a | = ${complex.module(a)}`);
+addParagraph(`a = ${a.display()}`);
+addParagraph(`b = ${b.display()}`);
+addParagraph(`c1 = ${c1.display()}`);
+addParagraph(`c2 = ${c2.display()}`);
+addParagraph(`a + b = ${complex.addition(a, b).display()}`);
+addParagraph(`a - b = ${complex.subtraction(a, b).display()}`);
+addParagraph(`a * b = ${complex.multiplication(a, b).display()}`);
+addParagraph(`c1 * c2 = ${complex.multiplication(c1, c2).display()}`);
+addParagraph(`a / b = ${complex.division(a, b)}`);
+addParagraph(`sprzężenie a = ${complex.coupling(a).display()}`);
+addParagraph(`| a | = ${complex.module(a)}`);
 
 //--------------------------------------------------------------
 
-// addLine();
-// addHeading('🔀 VEKTORY');
+addLine();
+addHeading('🔀 VEKTORY');
 
-// addParagraph(`Wektor V = ${v.display()}`);
-// addParagraph(`Wektor W = ${w.display()}`);
-// addParagraph(`W + V = ${vektor.addition(w, v).display()}`);
-// addParagraph(`W - V = ${vektor.subtraction(w, v).display()}`);
-// addParagraph(`gamma * W = ${vektor.scalarMultiplicatio(w, gamma).display()}`);
-// addParagraph(`< V | W > = ${vektor.scalarProduct(v, w).display()}`);
+addParagraph(`Wektor V = ${v.display()}`);
+addParagraph(`Wektor W = ${w.display()}`);
+addParagraph(`W + V = ${vektor.addition(w, v).display()}`);
+addParagraph(`W - V = ${vektor.subtraction(w, v).display()}`);
+addParagraph(`gamma * W = ${vektor.scalarMultiplicatio(w, gamma).display()}`);
+addParagraph(`< V | W > = ${vektor.scalarProduct(v, w).display()}`);
 
 //--------------------------------------------------------------
 
@@ -71,8 +87,11 @@ addParagraph(`Bramka Y = <br /> ${gateY.display()}`);
 addParagraph(`Bramka Z = <br /> ${gateZ.display()}`);
 addParagraph(`A = <br /> ${matrixA.display()}`);
 
-addParagraph(`A * X = <br />  ${matrix.multiplication(gateX, matrixA)}`);
-addParagraph(`A * Y = <br />  ${matrix.multiplication(gateY, matrixA)}`);
-addParagraph(`A * Z = <br />  ${matrix.multiplication(gateZ, matrixA)}`);
+addParagraph(`A * X = <br />  ${matrix.multiplication(gateX, matrixA).display()}`);
+addParagraph(`A * Y = <br />  ${matrix.multiplication(gateY, matrixA).display()}`);
+addParagraph(`A * Z = <br />  ${matrix.multiplication(gateZ, matrixA).display()}`);
+addParagraph(`A * H = <br />  ${matrix.multiplication(gateH, matrixA).display()}`);
+addParagraph(`Transpozycja Z = <br />  ${matrix.transposition(gateY).display()}`);
+addParagraph(`Pomiar = <br />  ${matrix.measurement(m1, m2)}`);
 
 //--------------------------------------------------------------

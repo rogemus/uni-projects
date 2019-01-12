@@ -6,6 +6,13 @@ export function multiplication(num1, num2) {
 	let imaginary;
 
 	if (num1.isLetterReal() && num2.isLetterReal()) {
+		if ((num1.real === num2.real) && (num1.imaginary === 0 && num2.imaginary === 0)) {
+			real = `${num1.real}^2`;
+			imaginary = 0;
+
+			return new Complex(real, imaginary);
+		}
+
 		if (
 			num1.imaginary === 0 &&
 			(num2.isLetterImaginary() || (num2.imaginary > 0 || num2.imaginary < 0))
@@ -44,6 +51,15 @@ export function multiplication(num1, num2) {
 		}
 
 		return;
+	}
+
+	if (num1.isLetterReal() && num2.real === 1) {
+		if (num1.imaginary === 0 && num2.imaginary === 0) {
+			real = num1.real;
+			imaginary = 0;
+
+			return new Complex(real, imaginary);
+		}
 	}
 
 	if (num1.isLetterReal() && (num2.real > 0 || num2.real < 0)) {
@@ -95,6 +111,15 @@ export function multiplication(num1, num2) {
 		}
 
 		return;
+	}
+
+	if (num2.isLetterReal() && num1.real === 1) {
+		if (num1.imaginary === 0 && num2.imaginary === 0) {
+			real = num2.real;
+			imaginary = 0;
+
+			return new Complex(real, imaginary);
+		}
 	}
 
 	if ((num1.real > 0 || num1.real < 0) && num2.isLetterReal()) {
